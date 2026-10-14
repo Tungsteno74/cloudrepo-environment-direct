@@ -12,7 +12,10 @@ SHA-pinned trusted actions, read-only permissions, a bounded timeout, observed
 native checks and safe leased cleanup. It never writes a default branch, opens a
 PR, merges, forks, publishes, invents credentials, or treats a READY task as pass.
 
-The optional local planner is pure and read-only:
+The optional local planner is pure and read-only. It can recognize one bounded,
+static existing GitHub Actions `push` workflow with a known runner or concrete OS
+matrix and one non-dynamic command; it only produces a plan, never a passing-run
+claim. Unsupported or conflicting workflow shapes require a Root override:
 
 ```powershell
 python plugins/cloudrepo-environment-direct/runtime/planner.py --repo . --pretty

@@ -2,7 +2,7 @@
 
 ## Decisions
 
-- GitHub Actions is the only implemented execution provider in 0.1.0.
+- GitHub Actions is the only implemented execution provider in 0.1.1.
 - Agent Plugins 1.0 package lives at `plugins/cloudrepo-environment-direct`.
 - The local Python planner is pure, offline and read-only; skills own execution.
 - ChatGPT Chat is Root and makes the final executor decision.
@@ -16,12 +16,16 @@
 - That identifier alone does not prove `workflow_dispatch`, ref deletion, write
   authority, or any specific GitHub API operation.
 - The package and archive validation are offline and reproducible from source.
+- GitHub Actions run 38574222069 passed this repository's `validate.yml` on
+  Ubuntu and Windows; this verifies package CI, not full agent selection or
+  external-executor authorization.
 
 ## Inferred
 
 - Existing repository workflows are normally safer than temporary workflow
   publication because their policy and ownership can be observed first.
-- Python project manifests can provide a conservative initial test selection.
+- A bounded static existing GitHub workflow can provide a conservative initial
+  CI plan; unsupported, dynamic, multi-job, or conflicting shapes require Root.
 
 ## Unresolved
 

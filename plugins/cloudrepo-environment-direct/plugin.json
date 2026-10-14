@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cloudrepo-environment-direct",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Skills-first deterministic direct CI planning for GitHub Actions, with provider-neutral contracts for future providers.",
   "author": {"name": "Tungsteno74"},
   "extensions": {"com.openai": {"interface": {"displayName": "CloudRepo Environment Direct", "shortDescription": "Plan deterministic direct CI", "longDescription": "Direct GitHub Actions CI is primary when supported and authorized. Reuse exact-SHA existing CI first; do not create a PR, merge, fork, write a default branch, invent credentials, or claim Cloud readiness is a pass. Azure DevOps is represented only by future-neutral contracts.", "developerName": "Tungsteno74", "category": "Developer Tools", "capabilities": ["GitHub Actions direct CI planning", "Exact-SHA workflow selection", "Read-only offline planning", "Provider-neutral contracts"], "defaultPrompt": "Use $cloudrepo-environment-direct to inspect the repository and choose a deterministic CI plan. Keep ChatGPT Chat as Root; execute no remote mutation without confirmed capabilities and explicit authorization.", "logo": "./assets/icon.png", "composerIcon": "./assets/icon.png"}, "apps": "./.app.json"}}
